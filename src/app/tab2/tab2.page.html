@@ -1,17 +1,56 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Calculadora
     </ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button fill="outline">
+        <ion-icon slot="start" name="star"></ion-icon>
+        Star
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <!-- caixinha é pra trocar propriedade-->
+  <!--<ion-item (click)="metodo()"> parasentese é uma ação-->
+    <ion-item>
+      <ion-label position="floating">Valor 1:</ion-label>
+      <ion-input [(ngModel)]="valor1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Valor 2:</ion-label>
+      <ion-input [(ngModel)]="valor2"></ion-input>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="botoesAritmeticos">
+            <ion-button (click)="mostrarSomar()" >+</ion-button>
+            <ion-button (click)="mostrarSubtracao()">-</ion-button>
+            <ion-button (click)="mostrarMultiplicacao()">*</ion-button>
+            <ion-button (click)="mostrarDivisao()">/</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="botoesMaiorMenor">
+            <ion-button (click)="mostrarMaior()">Maior</ion-button>
+            <ion-button (click)="mostrarMenor()">Menor</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-item>
+      <ion-label>Resultado:</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Operação:</ion-label>
+      <ion-input>(Operação)</ion-input>
+    </ion-item>
 </ion-content>

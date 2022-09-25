@@ -34,7 +34,7 @@ export class Tab2Page {
     const alert = await this.alertController.create({
       header: 'Resultado',
       subHeader: 'Operação SUBTRAIR entre os valores',
-      message: `<p>Valor 1: ${this.valor1}</p>  <p>Valor 2: ${this.valor2}</p> Resultado: ${this.resultado} `,
+      message: `<p>Valor um: ${this.valor1}</p>  <p>Valor dois: ${this.valor2}</p> Resultado: ${this.resultado} `,
       buttons: ['OK'],
     });
 
@@ -46,7 +46,7 @@ export class Tab2Page {
     const alert = await this.alertController.create({
       header: 'Resultado',
       subHeader: 'Operação MULTIPLICAÇÃO entre os valores',
-      message: `<p>Valor 1: ${this.valor1}</p>  <p>Valor 2: ${this.valor2}</p> Resultado: ${this.resultado} `,
+      message: `<p>Valor um: ${this.valor1}</p>  <p>Valor dois: ${this.valor2}</p> Resultado: ${this.resultado} `,
       buttons: ['OK'],
     });
 
@@ -58,7 +58,7 @@ export class Tab2Page {
     const alert = await this.alertController.create({
       header: 'Resultado',
       subHeader: 'Operação DIVISÃO entre os valores',
-      message: `<p>Valor 1: ${this.valor1}</p>  <p>Valor 2: ${this.valor2}</p> Resultado: ${this.resultado} `,
+      message: `<p>Valor um: ${this.valor1}</p>  <p>Valor dois: ${this.valor2}</p> Resultado: ${this.resultado} `,
       buttons: ['OK'],
     });
 

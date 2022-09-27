@@ -3,10 +3,9 @@
     <ion-title>
       Calculadora
     </ion-title>
-    <ion-buttons slot="secondary">
+    <ion-buttons (click)="limpar()" slot="secondary">
       <ion-button fill="outline">
-        <ion-icon slot="start" name="star"></ion-icon>
-        Star
+        C
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -51,6 +50,6 @@
     </ion-item>
     <ion-item>
       <ion-label>Operação:</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="operacao"></ion-input>
     </ion-item>
 </ion-content>

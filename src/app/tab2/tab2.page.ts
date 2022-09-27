@@ -11,6 +11,7 @@ export class Tab2Page {
   valor1: number;
   valor2: number;
   resultado: number;
+  operacao = '';
 
   maior: number;
   menor: number;
@@ -24,7 +25,9 @@ export class Tab2Page {
       subHeader: 'Operação SOMA entre os valores',
       message: `<p>Valor um: ${this.valor1}</p>  <p>Valor dois: ${this.valor2}</p> Resultado: ${this.resultado} `,
       buttons: ['OK'],
-    });
+    })
+    this.operacao = "Soma"
+    ;
 
     await alert.present();
   }
@@ -36,7 +39,9 @@ export class Tab2Page {
       subHeader: 'Operação SUBTRAIR entre os valores',
       message: `<p>Valor um: ${this.valor1}</p>  <p>Valor dois: ${this.valor2}</p> Resultado: ${this.resultado} `,
       buttons: ['OK'],
-    });
+    })
+    this.operacao = "Subtração"
+    ;
 
     await alert.present();
   }
@@ -48,7 +53,9 @@ export class Tab2Page {
       subHeader: 'Operação MULTIPLICAÇÃO entre os valores',
       message: `<p>Valor um: ${this.valor1}</p>  <p>Valor dois: ${this.valor2}</p> Resultado: ${this.resultado} `,
       buttons: ['OK'],
-    });
+    })
+    this.operacao = "Multiplicação"
+    ;
 
     await alert.present();
   }
@@ -60,13 +67,15 @@ export class Tab2Page {
       subHeader: 'Operação DIVISÃO entre os valores',
       message: `<p>Valor um: ${this.valor1}</p>  <p>Valor dois: ${this.valor2}</p> Resultado: ${this.resultado} `,
       buttons: ['OK'],
-    });
+    })
+    this.operacao = "Divisão"
+    ;
 
     await alert.present();
   }
 
   async mostrarMaior() {
-    if (this.valor1 > this.valor2) {
+    if (Number(this.valor1) > Number(this.valor2) || Number(this.valor2) < Number(this.valor1)) {
       const alert = await this.alertController.create({
         header: 'Resultado',
         subHeader: 'Maior Número',
@@ -75,7 +84,7 @@ export class Tab2Page {
       });
 
       await alert.present();
-    } else if (this.valor1 < this.valor2) {
+    } else if (Number(this.valor2) > Number(this.valor1) || Number(this.valor1) < Number(this.valor2)) {
       const alert = await this.alertController.create({
         header: 'Resultado',
         subHeader: 'Maior Número',
@@ -98,7 +107,7 @@ export class Tab2Page {
   }
 
   async mostrarMenor() {
-    if (this.valor1 < this.valor2) {
+    if (Number(this.valor1) < Number(this.valor2) || Number(this.valor2) > Number(this.valor1)) {
       const alert = await this.alertController.create({
         header: 'Resultado',
         subHeader: 'Menor Número',
@@ -107,7 +116,7 @@ export class Tab2Page {
       });
 
       await alert.present();
-    } else if (this.valor1 > this.valor2) {
+    } else if (Number(this.valor2) < Number(this.valor1) || Number(this.valor1) > Number(this.valor2)) {
       const alert = await this.alertController.create({
         header: 'Resultado',
         subHeader: 'Menor Número',
@@ -127,6 +136,12 @@ export class Tab2Page {
       await alert.present();
     }
 
+  }
+
+  async limpar() {
+    this.valor1 = 0;
+    this.valor2 = 0;
+    this.resultado = 0;
   }
 
 }

@@ -1,11 +1,121 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Versão
+      Calculadora 2.0
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<ion-label class="center">Versão 1.0.0</ion-label>
+  <ion-item>
+    <ion-label class="operacao">Operação:</ion-label>
+    <ion-input [(ngModel)]="operacao"></ion-input>
+  </ion-item>
+  <ion-input class="input" [(ngModel)]="insert"></ion-input>
+  <ion-item>
+    <ion-label class="resultado">Resultado:</ion-label>
+    <ion-input [(ngModel)]="numero"></ion-input>
+  </ion-item>
+  <!--Linha1-->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="medium" class="botao" (click)="mostrarNumero()">%</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium" class="botao">CE</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium" class="botao">C</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium" class="botao">x</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!--Linha2-->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="medium" class="botao">1/x</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium" class="botao">x²</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium" class="botao">²√x</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="medium" class="botao">÷</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    <!--Linha3-->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="light" class="botao" (click)="insert(7)" >7 </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="light" class="botao"  (click)="mostrarNumero(8)">8</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="light" class="botao" (click)="mostrarNumero(9)">9</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="medium" class="botao">X</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!--Linha4-->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="light" class="botao">4</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="light" class="botao">5</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="light" class="botao">6</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="medium" class="botao">-</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!--Linha5-->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="light" class="botao">1</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="light" class="botao">2</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="light" class="botao">3</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="medium" class="botao">+</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!--Linha6-->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="light" class="botao">+/-</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="light" class="botao">0</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="light" class="botao">,</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="medium" class="botao">=</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 </ion-content>

@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
+  numero: number;
+
   constructor() {}
+
+  async mostrarNumero() {
+    this.numero
+    
+  }
 
 }

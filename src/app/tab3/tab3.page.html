@@ -18,22 +18,22 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-button color="light" class="botaoPequeno">MC</ion-button>
+        <ion-button (click)="limparTodaMemoria()" color="light" class="botaoPequeno"><abbr title="Limpar Memoria">MC</abbr></ion-button>
       </ion-col>
       <ion-col>
-        <ion-button color="light" class="botaoPequeno">MR</ion-button>
+        <ion-button (click)="exibirResultadoMemoria()" color="light" class="botaoPequeno"><abbr title="Última Operação">MR</abbr></ion-button>
       </ion-col>
       <ion-col>
-        <ion-button color="light" class="botaoPequeno">M+</ion-button>
+        <ion-button (click)="adicaoMemoria()" color="light" class="botaoPequeno"><abbr title="Soma da Memoria">M+</abbr></ion-button>
       </ion-col>
       <ion-col>
-        <ion-button color="light" class="botaoPequeno">M-</ion-button>
+        <ion-button (click)="subtracaoMemoria()" color="light" class="botaoPequeno"><abbr title="Subtração da Memoria">M-</abbr></ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="adicionarMemoria()" color="light" class="botaoPequeno">MS</ion-button>
+        <ion-button (click)="adicionarMemoria()" color="light" class="botaoPequeno"><abbr title="Adicionar Memoria">MS</abbr></ion-button>
       </ion-col>
       <ion-col>
-        <ion-button color="light" class="botaoPequeno">M</ion-button>
+        <ion-button (click)="openModal()" color="light" class="botaoPequeno"><abbr title="Mostrar Memoria">M</abbr></ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

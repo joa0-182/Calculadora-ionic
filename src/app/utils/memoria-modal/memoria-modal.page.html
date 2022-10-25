@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Memoria</ion-title>
+    <ion-button (click)="fechar()" slot="end" >Fechar</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let mem of memoria" lines="full">
+    <ion-label>{{mem.operacao}} = {{mem.resultado}}</ion-label>
+  </ion-item>
+</ion-content>

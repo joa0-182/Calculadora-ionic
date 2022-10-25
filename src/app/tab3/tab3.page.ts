@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { evaluate } from 'mathjs';
 import { AlertController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { MemoriaModalPage } from '../utils/memoria-modal/memoria-modal.page';
 
 
 
@@ -25,7 +27,7 @@ export class Tab3Page {
   handlerMessage = '';
   roleMessage = '';
 
-  constructor(private alertController: AlertController) {}
+  constructor(private alertController: AlertController, private modalCtrl: ModalController) {}
 
   async mostrarAviso(titulo: string, mensagem: string) {
     const alert = await this.alertController.create({
@@ -35,6 +37,16 @@ export class Tab3Page {
     });
 
     await alert.present();
+  }
+
+  async openModal() {
+    const modal = await this.modalCtrl.create({
+      component: MemoriaModalPage,
+      componentProps: {
+        memoria: this.memoria,
+      }
+    });
+    modal.present();
   }
 
   adicionarValor(valor: string){
@@ -74,15 +86,45 @@ export class Tab3Page {
   }
 
   adicaoMemoria() {
-    //
+    if (this.operacao != '') {
+      this.calcularOperacao();
+    const memoria = this.memoria[this.memoria.length -1];
+    const novaMemoria: IMemoria = {
+      operacao: `${this.resultado} + ${memoria.resultado}`,
+      resultado: Number(this.resultado) + memoria.resultado,
+    };
+    this.memoria.push(novaMemoria);
+    console.log(`Adicionou: ${this.memoria}`);
+    }
   }
 
   subtracaoMemoria() {
-    //
+    if (this.operacao != '') {
+      this.calcularOperacao();
+    const memoria = this.memoria[this.memoria.length -1];
+    const novaMemoria: IMemoria = {
+      operacao: `${this.resultado} - ${memoria.resultado}`,
+      resultado: Number(this.resultado) - memoria.resultado,
+    };
+    this.memoria.push(novaMemoria);
+    console.log(`Adicionou: ${this.memoria}`);
+    }
   }
 
   armazenamentoMemoria() {
     //
+  }
+
+  limparTodaMemoria() {
+    this.memoria = [];
+  }
+
+  exibirResultadoMemoria() {
+    const memoria = this.memoria[this.memoria.length -1];
+    this.operacao = memoria.operacao;
+    this.resultado = memoria.resultado.toString();
+
+    console.log(`Memoria ${this.memoria}`);
   }
 
   limparOperacao(){
